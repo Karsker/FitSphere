@@ -1,2 +1,4 @@
 Frontend/FitnessWorkoutSystemFrontend/node_modules
 Frontend/FitnessWorkoutSystemFrontend/.git
+Frontend/FitnessWorkoutSystemFrontend/src/environments/environment.ts
+Backend/FitnessAndWorkoutSystem/.env
