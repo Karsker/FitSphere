@@ -1,0 +1,31 @@
+<nav class="w-screen h-16 bg-indigo-800 flex justify-between items-center px-4">
+  <div class="flex gap-4">
+    <button>
+      <img
+        src="assets/icons/navigation/hamburger.png"
+        width="35"
+        alt="menu-toggle"
+        (click)="emitToggleSidebar()"
+      />
+    </button>
+    <span class="text-3xl font-black text-white">FitSphere</span>
+  </div>
+  <div class="flex gap-2 text-white">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <div class="flex gap-2">
+        <img
+          src="assets/images/profile/profile-male.png"
+          width="25"
+          height="25"
+          alt="profile-pic"
+        />
+        <span *ngIf="!mobileScreen" class="text-white">
+          {{ currentUserName }}
+        </span>
+      </div>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </div>
+</nav>

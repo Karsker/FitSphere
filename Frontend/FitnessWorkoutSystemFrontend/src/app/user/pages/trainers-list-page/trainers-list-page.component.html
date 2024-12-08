@@ -1,0 +1,56 @@
+<section *ngIf="loading" class="h-screen w-screen flex align-center justify-center">
+    <app-spinner />
+</section>
+
+<!-- Details of trainer chosen by the user -->
+<section *ngIf="!loading && currentUser && currentUser.trainerId && currentUser.userId && trainer && trainer.userId">
+    <app-trainer-profile-header [trainerInfo]="trainer"/>
+    <app-trainer-messages [trainerId]="trainer.userId" [userId]="currentUser.userId" [trainerName]="trainer.name" [userName]="currentUser.name" />
+</section>
+
+<!-- Table of all trainers (only shown when user hasn't chosen a trainer yet) -->
+<section *ngIf="!loading && currentUser != null && currentUser.trainerId == null" class="h-screen">
+    <div class="h-60 w-full py-6 px-10 text-justify bg-gradient-to-b from-stone-800 via-orange-500 to-orange-200">
+        <!-- <img src="assets/images/exercises/exercisesListBanner.jpg" class="object-contain object-center"  alt="exercises-banner"> -->
+        <h1 class="text-4xl font-bold text-white">Trainer</h1>
+        <p class="text-white font-medium mt-3">Unlock your full potential with the guidance of expert trainers! Our dedicated trainers bring years of experience, personalized workout plans, and motivation to help you achieve your fitness goals faster and more effectively. Whether you're a beginner or a seasoned athlete, our trainers provide tailored support to enhance your technique, prevent injuries, and keep you on track. Choose a trainer today and start your journey toward a healthier, stronger, and more confident you!</p>
+    </div>
+
+    <div class="max-w-full border border-red-500 overflow-x-scroll">
+        <table mat-table [dataSource]="trainersList">
+    
+            <!-- Name column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let trainer"> {{ trainer.name }} </td>
+            </ng-container>
+    
+            <!-- Email column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let trainer"> {{ trainer.email }} </td>
+            </ng-container>
+    
+            <!-- Age column -->
+            <ng-container matColumnDef="age">
+                <th mat-header-cell *matHeaderCellDef>Age</th>
+                <td mat-cell *matCellDef="let trainer"> {{ trainer.age }} </td>
+            </ng-container>
+    
+             <!-- Gender column -->
+             <ng-container matColumnDef="gender">
+                <th mat-header-cell *matHeaderCellDef>Gender</th>
+                <td mat-cell *matCellDef="let trainer"> {{ trainer.gender }} </td>
+            </ng-container>
+    
+            <!-- Choose trainer button -->
+            <ng-container matColumnDef="choose">
+                <th mat-header-cell *matHeaderCellDef>Choose</th>
+                <td mat-cell *matCellDef="let trainer"><button mat-flat-button color="primary" (click)="openDialog(trainer)">Choose</button></td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</section>`

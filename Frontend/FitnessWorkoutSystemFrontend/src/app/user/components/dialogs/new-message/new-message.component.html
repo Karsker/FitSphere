@@ -1,0 +1,17 @@
+<h2 mat-dialog-title> New Message</h2>
+<mat-dialog-content>
+    <div class="md:w-96">
+        <form id="newMessageForm" [formGroup]="messageForm" (submit)="onSubmit()">
+            <mat-form-field class="w-full">
+                <mat-label>Message</mat-label>
+                <textarea required matInput type="text" formControlName="message" name="message"></textarea>
+            </mat-form-field>
+            <!-- <button mat-flat-button color="primary">Send</button> -->
+        </form>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button type="submit" color="primary" form="newMessageForm">Send</button>
+    <button mat-stroked-button mat-dialog-close color="primary">Cancel</button>
+</mat-dialog-actions>

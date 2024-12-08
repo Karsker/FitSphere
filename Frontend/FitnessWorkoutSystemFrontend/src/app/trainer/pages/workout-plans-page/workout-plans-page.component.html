@@ -1,0 +1,37 @@
+<section class="h-full">
+    <div class="h-60 w-full p-4 bg-black">
+        <!-- <img src="assets/images/exercises/exercisesListBanner.jpg" class="object-contain object-center"  alt="exercises-banner"> -->
+        <h1 class="text-4xl font-bold text-white">Workout Plans</h1>
+    </div>
+    
+    <button mat-flat-button color="primary" class="m-5" (click)="openDialog()">Create</button>
+    <div *ngIf="workoutPlans.length == 0" class="text-xl flex justify-center">
+        You haven't created any workout plans
+    </div>
+    
+    <div class="max-w-full overflow-x-scroll">
+        <table mat-table [dataSource]="workoutPlans">
+    
+            <!-- Plan Name column -->
+            <ng-container matColumnDef="PlanName">
+                <th mat-header-cell *matHeaderCellDef>Plan Name</th>
+                <td mat-cell *matCellDef="let workoutPlan"> {{ workoutPlan.workoutPlanName }} </td>
+            </ng-container>
+    
+            <!-- Goal column -->
+            <ng-container matColumnDef="Goal">
+                <th mat-header-cell *matHeaderCellDef>Goal</th>
+                <td mat-cell *matCellDef="let workoutPlan"> {{ workoutPlan.goal }} </td>
+            </ng-container>
+    
+            <!-- View column -->
+            <ng-container matColumnDef="View">
+                <th mat-header-cell *matHeaderCellDef>View</th>
+                <td mat-cell *matCellDef="let workoutPlan"><span [routerLink]="workoutPlan.workoutPlanId">View</span></td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</section>

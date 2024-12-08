@@ -1,0 +1,34 @@
+<section *ngIf="exercise != undefined" class="p-6 flex flex-col gap-3">
+  <a routerLink="../../exercises" class="text-blue-500">Back</a>
+  <h1 class="text-3xl font-bold">{{ exercise.name }}</h1>
+
+  <span>{{ exercise.description }}</span>
+
+  <div>
+    <h2 class="text-xl font-semibold">Muscles Worked</h2>
+    <ul class="list-none">
+      <li *ngFor="let muscle of exercise.muscles">{{ muscle }}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold">Equipment Needed</h2>
+    <span *ngIf="exercise.equipment.length == 0">None</span>
+    <ul class="list-none">
+      <li *ngFor="let eq of exercise.equipment">{{ eq }}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold">Instructions</h2>
+    <ol class="list-decimal px-4">
+      <li *ngFor="let step of exercise.instructions">{{ step }}</li>
+    </ol>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold">Reference Video</h2>
+    <iframe width="560" height="315" [src]="exercise.videoLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+<ng-template #elseBlock><mat-spinner /></ng-template>

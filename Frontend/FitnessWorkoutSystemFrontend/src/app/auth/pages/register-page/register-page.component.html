@@ -1,0 +1,122 @@
+<section class="w-screen h-screen flex">
+  <div *ngIf="!mobileScreen" id="image-container" class="w-4/6 h-full contain">
+  </div>
+  <div class="flex-grow max-h-full overflow-y-scroll overflow-x-hidden flex flex-col gap-5 items-center justify-center">
+
+    <h1 class="text-4xl font-black mt-10">FitSphere</h1>
+    <h2 class="text-2xl font-medium">Register</h2>
+
+    <form [formGroup]="registerForm" (submit)="onSubmit()">
+      <mat-stepper orientation="vertical" class="w-96">
+    
+        <!-- Step-1: Required details -->
+        <mat-step [stepControl]="registerForm">
+          <ng-template matStepLabel>Enter your details</ng-template>
+    
+          <mat-form-field class="w-full">
+            <mat-label>Name</mat-label>
+            <input required matInput type="text" formControlName="name" name="name"/>
+          </mat-form-field>
+    
+          <mat-form-field class="w-full">
+            <mat-label>Email</mat-label>
+            <input required matInput type="email" formControlName="email" name="email"/>
+            <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+                Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
+    
+          <mat-form-field class="w-full">
+            <mat-label>Age</mat-label>
+            <input required matInput type="number" formControlName="age" name="age"/>
+            <mat-error *ngIf="(registerForm.get('age')?.hasError('min') || registerForm.get('age')?.hasError('max'))">
+                Age must be between 18 and 100
+            </mat-error>
+          </mat-form-field>
+    
+          <mat-form-field class="w-full">
+            <mat-label>Gender</mat-label>
+            <mat-select required formControlName="gender" name="gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field class="w-full">
+            <mat-label>Role</mat-label>
+            <mat-select required formControlName="role" name="role">
+              <mat-option value="User">User</mat-option>
+              <mat-option value="Trainer">Trainer</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-flat-button color="primary" type="button" matStepperNext>Next</button>
+          </div>
+        </mat-step>
+    
+        <!-- Step-2: Optional details -->
+        <mat-step  [stepControl]="registerForm">
+            <ng-template matStepLabel>Tell us more about yourself</ng-template>
+            
+            <div class="text-sm text-stone-500 my-4">
+                <span>You can enter these details later in the settings as well</span>
+            </div>
+    
+            <mat-form-field class="w-full">
+                <mat-label>Weight</mat-label>
+                <input matInput type="number" formControlName="weight" name="weight"/>
+                <mat-error *ngIf="(registerForm.get('weight')?.hasError('min') || registerForm.get('weight')?.hasError('max'))">
+                    Weight must be between 30 and 300 kg
+                </mat-error>
+                <span matSuffix class="px-4">kg</span>
+            </mat-form-field>
+    
+            <mat-form-field class="w-full">
+                <mat-label>Height</mat-label>
+                <input matInput type="number" formControlName="height" name="height"/>
+                <mat-error *ngIf="(registerForm.get('height')?.hasError('min') || registerForm.get('height')?.hasError('max'))">
+                    Height must be between 130 and 220 cm
+                </mat-error>
+                <span matSuffix class="px-4">cm</span>
+            </mat-form-field>
+    
+            <mat-form-field class="w-full">
+                <mat-label>Goal</mat-label>
+                <mat-select formControlName="goal" name="goal">
+                  <mat-option value="Muscle Gain">Muscle Gain</mat-option>
+                  <mat-option value="Weight Loss">Weight Loss</mat-option>
+                </mat-select>
+              </mat-form-field>
+          
+          <div>
+            <button mat-flat-button color="primary" type="button" button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+    
+        <!-- Step-3: Enter password -->
+        <mat-step  [stepControl]="registerForm">
+            <div class="text-sm text-stone-500 my-4">
+                <span>Password must fullfil the following requirements:</span>
+                <ul>
+                    <li>At least 6 characters long</li>
+                    <li>At least one lower case character</li>
+                    <li>At least one upper case character</li>
+                    <li>At least one digit</li>
+                    <li>At least one special character</li>
+                </ul>
+            </div>
+            <ng-template matStepLabel>Enter your password</ng-template>
+    
+          <mat-form-field class="w-full">
+            <mat-label>Password</mat-label>
+            <input required matInput type="password" formControlName="password" />
+          </mat-form-field>
+    
+          <button mat-flat-button type="submit" color="primary">Register</button>
+        </mat-step>
+      </mat-stepper>
+    </form>
+    <span class="text-blue-500"><a routerLink="/auth/login">Already have an account</a></span>
+  </div>
+</section>
+

@@ -1,0 +1,36 @@
+<h2 mat-dialog-title> New Workout Plan</h2>
+<mat-dialog-content>
+    <form id="workoutPlanForm" [formGroup]="newWorkoutPlanForm" (submit)="onSubmit()">
+        <div class="flex flex-col md:w-96 md:max-w-96">
+            <mat-form-field>
+                <mat-label>Workout Plan Name</mat-label>
+                <input matInput type="text" formControlName="planName" name="planName"/>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Goal</mat-label>
+                <mat-select formControlName="goal">
+                    <mat-option value="Weight Loss">Weight Loss</mat-option>
+                    <mat-option value="Muscle Gain">Muscle Gain</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Days</mat-label>
+                <mat-select multiple formControlName="days">
+                    <mat-option value="Monday">Monday</mat-option>
+                    <mat-option value="Tuesday">Tuesday</mat-option>
+                    <mat-option value="Wednesday">Wednesday</mat-option>
+                    <mat-option value="Thursday">Thursday</mat-option>
+                    <mat-option value="Friday">Friday</mat-option>
+                    <mat-option value="Saturday">Saturday</mat-option>
+                    <mat-option value="Sunday">Sunday</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-flat-button [mat-dialog-close]="this.newWorkoutPlanForm.value" type="submit" color="primary" form="workoutPlanForm">Add</button>
+    <button mat-stroked-button mat-dialog-close color="primary">Cancel</button>
+</mat-dialog-actions>
