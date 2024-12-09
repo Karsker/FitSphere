@@ -50,5 +50,7 @@ namespace FitnessAndWorkoutSystem.Models
         [Range(30.00, 300.00)]
         public decimal? TargetWeight { get; set; }
 
+        public required string[] WorkoutPlans { get; set; }
+
     }
 }

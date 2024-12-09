@@ -10,6 +10,8 @@ import { TrainerProfileHeaderComponent } from './components/trainer-profile-head
 import { TrainerMessagesComponent } from './components/trainer-messages/trainer-messages.component';
 import { MessageDialogComponent } from './components/dialogs/message-dialog/message-dialog.component';
 import { NewMessageComponent } from './components/dialogs/new-message/new-message.component';
+import { WorkoutPlansPageComponent } from './pages/workout-plans-page/workout-plans-page.component';
+
 @NgModule({
   declarations: [
     UserHomePageComponent,
@@ -20,7 +22,8 @@ import { NewMessageComponent } from './components/dialogs/new-message/new-messag
     TrainerProfileHeaderComponent,
     TrainerMessagesComponent,
     MessageDialogComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    WorkoutPlansPageComponent,
   ],
   imports: [
     SharedModule,

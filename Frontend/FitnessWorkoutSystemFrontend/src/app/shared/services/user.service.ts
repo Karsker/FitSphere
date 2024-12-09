@@ -74,4 +74,17 @@ export class UserService {
   getUsersByTrainer(trainerId: string): Observable<Object> {
     return this.api.get(`/user/filterByTrainer/${trainerId}`);
   }
+
+  /**
+   * Updates a single user's data
+   *
+   * @param {string} userId - The userId property of the user
+   * @param {User} userData - The updated user object
+   * @return {*} - Observable that emits the response of the PUT request
+   * @memberof UserService
+   */
+  updateUser(userId: string, userData: User): Observable<Object> {
+    return this.api.request('PUT', `/user/${userId}`, JSON.stringify(userData));
+  }
+
 }

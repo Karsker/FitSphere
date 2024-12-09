@@ -7,6 +7,7 @@ import { NewWorkoutDialogComponent } from './components/dialogs/new-workout-dial
 import { ExercisesPageComponent } from './pages/exercises-page/exercises-page.component';
 import { AddExerciseDialogComponent } from './components/dialogs/add-exercise-dialog/add-exercise-dialog.component';
 import { ClientsPageComponent } from './pages/clients-page/clients-page.component';
+import { AssignWorkoutDialogComponent } from './components/dialogs/assign-workout-dialog/assign-workout-dialog.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ClientsPageComponent } from './pages/clients-page/clients-page.componen
     NewWorkoutDialogComponent,
     ExercisesPageComponent,
     AddExerciseDialogComponent,
-    ClientsPageComponent
+    ClientsPageComponent,
+    AssignWorkoutDialogComponent
   ],
   imports: [
     CommonModule,

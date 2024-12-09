@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiService } from '../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { ViewExerciseButtonComponent } from '../../components/view-exercise-button/view-exercise-button.component';
+import { WorkoutPlansService } from '../../services/workout-plans.service';
 
 @Component({
   selector: 'app-workout-plan-desc-page',
@@ -18,26 +19,16 @@ export class WorkoutPlanDescPageComponent implements OnInit {
 
   displayedColumns = ["name", "reps", "sets", "view"] // Columns displayed in the exercises table
 
-  constructor(private api: ApiService, private route: ActivatedRoute){}
+  constructor(private api: ApiService, private route: ActivatedRoute, private workoutPlanService: WorkoutPlansService){}
 
   ngOnInit(): void {
 
     // Get the workout plan ID from the route
     this.workoutPlanId = this.route.snapshot.paramMap.get('id') ?? "";
 
-    this.getPlan().subscribe(res => {
+    this.workoutPlanService.getPlan(this.workoutPlanId).subscribe(res => {
       this.workoutPlan = res as WorkoutPlan;
       this.loading = false;
     });
-  }
-
-  /**
-   * Fetches the WorkoutPlan object associated with selected workout plan ID
-   *
-   * @return {*}  {Observable<Object>} - Observable that emits the workout plan fetched from the server
-   * @memberof WorkoutPlanDescPageComponent
-   */
-  getPlan(): Observable<Object> {
-    return this.api.get(`/workoutPlan/search/${this.workoutPlanId}`);
   }
 }

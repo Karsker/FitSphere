@@ -67,6 +67,7 @@ export class RegisterPageComponent implements OnInit {
       weight: this.registerForm.value.weight ?? undefined,
       height: this.registerForm.value.height ?? undefined,
       goal: this.registerForm.value.goal ?? undefined,
+      workoutPlans: [],
     }
     this.auth.registerUser(newUser).subscribe(res => {
       if (res != 401 || res != 400) {

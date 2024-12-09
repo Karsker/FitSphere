@@ -10,12 +10,13 @@ import { TrainersListPageComponent } from './user/pages/trainers-list-page/train
 import { userAccessGuard } from './guards/user-access.guard';
 import { TrainerHomePageComponent } from './trainer/pages/trainer-home-page/trainer-home-page.component';
 import { trainerAccessGuard } from './guards/trainer-access.guard';
-import { WorkoutPlansPageComponent } from './trainer/pages/workout-plans-page/workout-plans-page.component';
+import { WorkoutPlansPageComponent as TrainerWorkoutPlansPage } from './trainer/pages/workout-plans-page/workout-plans-page.component';
 import { ExercisesPageComponent } from './trainer/pages/exercises-page/exercises-page.component';
 import { WorkoutPlanDescPageComponent } from './shared/pages/workout-plan-desc-page/workout-plan-desc-page.component';
 import { ComingSoonPageComponent } from './shared/pages/coming-soon-page/coming-soon-page.component';
 import { authGuard } from './guards/auth.guard';
 import { ClientsPageComponent } from './trainer/pages/clients-page/clients-page.component';
+import { WorkoutPlansPageComponent as UserWorkoutPlansPage } from './user/pages/workout-plans-page/workout-plans-page.component';
 
 const routes: Routes = [
   {
@@ -76,9 +77,14 @@ const routes: Routes = [
         component: ComingSoonPageComponent
       },
       {
+        path: 'workout-plans/:id',
+        title: 'Workout Plan',
+        component: WorkoutPlanDescPageComponent
+      },
+      {
         path: 'workout-plans',
         title: 'Workout Plans',
-        component: ComingSoonPageComponent
+        component: UserWorkoutPlansPage
       }
     ]
   },
@@ -101,7 +107,7 @@ const routes: Routes = [
       {
         path: 'workout-plans',
         title: 'Workout Plans',
-        component: WorkoutPlansPageComponent
+        component: TrainerWorkoutPlansPage
       },
       {
         path: 'exercise/:id',

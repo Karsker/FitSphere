@@ -13,6 +13,7 @@ export interface User {
     weight?: number,
     height?: number,
     targetWeight?: number,
+    workoutPlans: string[],
 }
 
 export interface Exercise {
