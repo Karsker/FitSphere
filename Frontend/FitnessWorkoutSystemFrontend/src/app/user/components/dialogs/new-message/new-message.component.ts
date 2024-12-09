@@ -23,6 +23,11 @@ export class NewMessageComponent {
   }, private messageService: MessageService) {}
 
 
+  /**
+   * Submits the message data collected in the form to the server by calling the sendMessage function
+   *
+   * @memberof NewMessageComponent
+   */
   onSubmit() {
     if (this.messageForm.valid && this.messageForm.value.message) {
       this.messageService.sendMessage(

@@ -53,6 +53,10 @@ namespace FitnessAndWorkoutSystem.Services
             return await _userRepo.GetByRole(role);
         }
 
+        public async Task<List<User>?> GetUsersByTrainer(string trainerId)
+        {
+            return await _userRepo.GetByTrainer(trainerId);
+        }
         public async Task UpdateUser(string userId, User user)
         {
             await _userRepo.UpdateUser(userId, user);

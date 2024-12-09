@@ -20,8 +20,15 @@ export class NewWorkoutDialogComponent {
     goal: new FormControl<string>("", Validators.required)
   });
 
+  /**
+   * Creates a new WorkoutPlan object from form data and sends it to the server.
+   *
+   * @memberof NewWorkoutDialogComponent
+   */
   onSubmit() {
     if (this.newWorkoutPlanForm.valid) {
+
+      // Create a new WorkoutPlan object
       let newWorkoutPlan: WorkoutPlan = {
         trainerId: this.data.trainerId,
         days: this.newWorkoutPlanForm.value.days ?? [],

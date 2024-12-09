@@ -9,9 +9,11 @@ import { ViewExerciseButtonComponent } from '../../../shared/components/view-exe
   styleUrl: './exercise-list.component.scss'
 })
 export class ExerciseListComponent {
-  exercisesList!: Exercise[];
-  displayedColumns = ["name", "muscles", "equipment", "view"]
+  exercisesList!: Exercise[]; // Array to store the exercises
+  displayedColumns = ["name", "muscles", "equipment", "view"] // Columns displayed in the exercises table
   constructor(private api: ApiService) {
+
+    // Fetch all the exercises from server and store in exercisesList array
     this.api.get("/exercise").subscribe(data => {this.exercisesList = data as Exercise[]});
   }
 

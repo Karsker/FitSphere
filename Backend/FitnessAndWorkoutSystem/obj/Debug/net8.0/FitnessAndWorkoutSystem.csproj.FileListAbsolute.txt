@@ -45,3 +45,4 @@ C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSys
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Debug\net8.0\FitnessAndWorkoutSystem.sourcelink.json

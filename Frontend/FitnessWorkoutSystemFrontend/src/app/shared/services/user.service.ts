@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class UserService {
 
-  currentUser = new BehaviorSubject<User | null>(null);
+  currentUser = new BehaviorSubject<User | null>(null); // Stores logged in user's details 
 
   constructor(private api: ApiService, private auth: AuthService) {
     
@@ -23,6 +23,12 @@ export class UserService {
     });
   }
   
+  /**
+   * Getter for current user
+   *
+   * @readonly
+   * @memberof UserService
+   */
   get CurrentUser() {
     return this.currentUser;
   }
@@ -56,5 +62,16 @@ export class UserService {
    */
   getAllTrainers(): Observable<Object> {
     return this.api.get('/user/filterByRole/trainer');
+  }
+
+  /**
+   * Gets all users from the server that have the passed trainerId as the value of trainerId property
+   *
+   * @param {string} trainerId - userId property of the trainer
+   * @return {*}  {Observable<Object>} - Observable that emits the users fetched from the server
+   * @memberof UserService
+   */
+  getUsersByTrainer(trainerId: string): Observable<Object> {
+    return this.api.get(`/user/filterByTrainer/${trainerId}`);
   }
 }

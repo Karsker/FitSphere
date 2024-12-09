@@ -15,6 +15,8 @@ export class TrainerHomePageComponent {
   constructor(private auth: AuthService, private router: Router){}
 
   ngOnInit(): void {
+
+    // Check if the screen size is small (for mobile screen)
     if (window.screen.width < 768) {
       this.mobileScreen = true;
     } else {
@@ -32,6 +34,7 @@ export class TrainerHomePageComponent {
     this.router.navigate(['/trainer/home/workout-plans']);
   }
 
+  // Items shown on the sidebar with their links
   navItems = [
     {
       name: "Clients",
@@ -54,6 +57,11 @@ export class TrainerHomePageComponent {
   ]
 
 
+  /**
+   * Logs out the currently logged in user by calling the logout function from auth service
+   *
+   * @memberof TrainerHomePageComponent
+   */
   logout() {
     this.auth.logout();
     

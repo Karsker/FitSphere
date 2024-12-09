@@ -6,5 +6,5 @@ import { User } from '../../../types';
   styleUrl: './trainer-profile-header.component.scss'
 })
 export class TrainerProfileHeaderComponent {
-  @Input() trainerInfo!:User;
+  @Input() trainerInfo!:User; // Trainer info passed from the user home page
 }

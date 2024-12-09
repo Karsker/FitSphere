@@ -40,7 +40,7 @@ namespace FitnessAndWorkoutSystem.Services
                 Issuer = _issuer,
                 Audience = _audience,
                 Claims = claims,
-                Expires = DateTime.Now.AddHours(1),
+                Expires = DateTime.Now.AddMonths(1),
                 SigningCredentials = cred
             };
             var handler = new JsonWebTokenHandler();

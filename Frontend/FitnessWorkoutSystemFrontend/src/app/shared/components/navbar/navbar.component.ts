@@ -7,15 +7,17 @@ import { AuthService } from '../../../auth/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
   
-  currentUserName!: string;
-  mobileScreen!: boolean;
-  @Output() toggleSidebar: EventEmitter<void> = new EventEmitter<void>();
+  currentUserName!: string; // User name of the logged in user
+  mobileScreen!: boolean; // Whether the screen is small (mobile device)
+
+  @Output() toggleSidebar: EventEmitter<void> = new EventEmitter<void>(); // Event emitted when sidebar toggle is clicked
 
   constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
     this.currentUserName = this.auth.CurrentUserName??"";
 
+    // Check current window size 
     if (window.screen.width < 768) {
       this.mobileScreen = true;
     } else {
@@ -31,10 +33,20 @@ export class NavbarComponent implements OnInit {
     ); 
   }
 
+  /**
+   * Emits an event from the toggleSidebar emitter
+   *
+   * @memberof NavbarComponent
+   */
   emitToggleSidebar() {
     this.toggleSidebar.emit();
   }
 
+  /**
+   * Logs out the current user by calling the logout function from auth service
+   *
+   * @memberof NavbarComponent
+   */
   logout() {
     this.auth.logout();
   }

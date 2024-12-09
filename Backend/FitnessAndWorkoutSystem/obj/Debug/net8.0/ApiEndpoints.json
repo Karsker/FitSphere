@@ -184,6 +184,32 @@
   },
   {
     "ContainingType": "FitnessAndWorkoutSystem.Controllers.UserController",
+    "Method": "GetUsersByTrainer",
+    "RelativePath": "api/User/filterByTrainer/{trainerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "trainerId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessAndWorkoutSystem.Models.User, FitnessAndWorkoutSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.UserController",
     "Method": "GetUserById",
     "RelativePath": "api/User/search/{id}",
     "HttpMethod": "GET",

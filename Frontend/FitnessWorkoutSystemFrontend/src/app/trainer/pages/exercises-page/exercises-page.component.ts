@@ -14,19 +14,29 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ExercisesPageComponent implements OnInit {
 
-  userId!: string;
-  exercisesList!: Exercise[];
-  displayedColumns = ["name", "muscles", "equipment", "view", "add-to-plan"];
+  userId!: string; // userId of logged in user
+  exercisesList!: Exercise[]; // Array to store all exercises
+  displayedColumns = ["name", "muscles", "equipment", "view", "add-to-plan"]; // Columns displayed in the exercises table
 
   constructor(private data: TrainerDataService, private auth: AuthService, private dialog: MatDialog){}
 
   ngOnInit(): void {
+    // Get the currently logged in userId from auth service
     this.userId = this.auth.CurrentUserId ?? "Unknown";
+
+    // Fetch all exercises from server and store in exercisesList array
     this.data.getAllExercises().subscribe(data => {
       this.exercisesList = data as Exercise[];
     });
   }
 
+  /**
+   * Opens a new dialog to add the calling exercise to a workout
+   *
+   * @param {string} exerciseId - The exerciseId property of the calling exercise
+   * @param {string} exerciseName - The exerciseName property of the calling exercise
+   * @memberof ExercisesPageComponent
+   */
   openDialog(exerciseId: string, exerciseName: string) {
     const dialogRef = this.dialog.open(AddExerciseDialogComponent, {
       data: {

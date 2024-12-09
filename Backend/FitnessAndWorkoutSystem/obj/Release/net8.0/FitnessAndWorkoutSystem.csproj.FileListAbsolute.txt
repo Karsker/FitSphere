@@ -45,3 +45,4 @@ C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSys
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\FitnessAndWorkoutSystem.pdb
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\FitnessAndWorkoutSystem.genruntimeconfig.cache
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\ref\FitnessAndWorkoutSystem.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\FitnessAndWorkoutSystem.sourcelink.json

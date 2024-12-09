@@ -51,6 +51,14 @@ namespace FitnessAndWorkoutSystem.Repositories
             return users;
         }
 
+        // Get users by trainer
+        public async Task<List<User>> GetByTrainer(string trainerId)
+        {
+            var users = await _usersCollection.Find(u => u.TrainerId ==  trainerId).ToListAsync();
+
+            return users;
+        }
+
         // Update user
         public async Task UpdateUser(string userId, User user)
         {

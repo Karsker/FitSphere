@@ -12,6 +12,7 @@ namespace FitnessAndWorkoutSystem.Interfaces
 
         public Task<List<User>?> GetUsersByRole(string role);
 
+        public Task<List<User>?> GetUsersByTrainer(string trainerId);
         public Task UpdateUser(string userId, User user);
     }
 }

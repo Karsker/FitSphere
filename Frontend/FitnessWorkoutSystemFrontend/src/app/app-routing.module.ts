@@ -15,6 +15,7 @@ import { ExercisesPageComponent } from './trainer/pages/exercises-page/exercises
 import { WorkoutPlanDescPageComponent } from './shared/pages/workout-plan-desc-page/workout-plan-desc-page.component';
 import { ComingSoonPageComponent } from './shared/pages/coming-soon-page/coming-soon-page.component';
 import { authGuard } from './guards/auth.guard';
+import { ClientsPageComponent } from './trainer/pages/clients-page/clients-page.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,11 @@ const routes: Routes = [
     component: TrainerHomePageComponent,
     canActivate: [trainerAccessGuard],
     children: [
+      {
+        path: 'clients',
+        title: 'Clients',
+        component: ClientsPageComponent
+      },
       {
         path: 'workout-plans/:id',
         title: 'Workout Plan',

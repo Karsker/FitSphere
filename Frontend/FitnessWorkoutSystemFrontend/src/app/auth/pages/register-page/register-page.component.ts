@@ -4,6 +4,7 @@ import { User } from '../../../types';
 import { Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
@@ -13,7 +14,7 @@ import { NgIf } from '@angular/common';
 export class RegisterPageComponent implements OnInit {
 
   mobileScreen!: boolean;
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     if (window.screen.width < 768) {
@@ -67,6 +68,10 @@ export class RegisterPageComponent implements OnInit {
       height: this.registerForm.value.height ?? undefined,
       goal: this.registerForm.value.goal ?? undefined,
     }
-    this.auth.registerUser(newUser).subscribe(res => console.log(res));
+    this.auth.registerUser(newUser).subscribe(res => {
+      if (res != 401 || res != 400) {
+        this.router.navigateByUrl('/auth/login');
+      }
+    });
   }
 }

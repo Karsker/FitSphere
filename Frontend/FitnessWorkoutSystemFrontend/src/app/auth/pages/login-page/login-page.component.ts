@@ -61,7 +61,9 @@ export class LoginPageComponent implements OnInit {
         if (res.token != undefined && res.user != undefined) {
           this.auth.saveUserInfo(res);
          
+          // Reload the page to refresh URL
           window.location.reload();
+          // Redirect the user to home page based on their role
           if (res.user.role == 'User') {
             this.router.navigateByUrl('/user/home/dashboard', {replaceUrl: true});
           } else if (res.user.role == 'Trainer') {

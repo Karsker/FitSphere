@@ -7,7 +7,7 @@ import { AuthService } from '../../../auth/services/auth.service';
   styleUrl: './user-profile-header.component.scss'
 })
 export class UserProfileHeaderComponent implements OnInit{
-  userName?: string;
+  userName?: string; // Currently logged in user's name
 
   constructor(private auth: AuthService) {}
 

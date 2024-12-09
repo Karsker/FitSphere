@@ -13,23 +13,26 @@ import { NewMessageComponent } from '../dialogs/new-message/new-message.componen
 })
 export class TrainerMessagesComponent implements OnInit {
 
-  @Input() trainerId!: string;
-  @Input() userId!: string;
-  @Input() trainerName!: string;
-  @Input() userName!: string;
+  @Input() trainerId!: string; // userId of the trainer
+  @Input() userId!: string; // userId of the logged in user
+  @Input() trainerName!: string; // Name of the trainer
+  @Input() userName!: string; // Name of the logged in user
 
-  messages: Message[] = [];
-  displayedColumns = ["From", "To", "Date", "View"];
+  messages: Message[] = []; // Array to store messages between trainer and user
+  displayedColumns = ["From", "To", "Date", "View"]; // Columns to be displayed in the messages table
+  
   constructor(private messageService: MessageService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+
+    // Get all the messages between the trainer and user
     this.messageService.getAllMessages(this.trainerId).subscribe(data => {
       this.messages = data as Message[];
     });
   }
 
   /**
-   * View a message in a dialog
+   * Opens a new dialog to view a message
    *
    * @param {Message} message - The message object
    * @memberof TrainerMessagesComponent
@@ -45,6 +48,11 @@ export class TrainerMessagesComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens a new dialog with a form to send a new message to the trainer
+   *
+   * @memberof TrainerMessagesComponent
+   */
   newMessage() {
     const dialogRef = this.dialog.open(NewMessageComponent, {
       data: {

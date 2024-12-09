@@ -18,6 +18,8 @@ export class UserHomePageComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+
+    // Check if the screen size is small (for mobile devices)
     if (window.screen.width < 768) {
       this.mobileScreen = true;
     } else {

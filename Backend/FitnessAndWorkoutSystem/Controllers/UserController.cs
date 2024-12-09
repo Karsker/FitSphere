@@ -45,6 +45,20 @@ namespace FitnessAndWorkoutSystem.Controllers
             return Ok(users);
         }
 
+        // Filter users by trainer
+        [Authorize(Policy = "TrainerOnly")]
+        [HttpGet("filterByTrainer/{trainerId}")]
+        public async Task<ActionResult<List<User>>> GetUsersByTrainer(string trainerId)
+        {
+            var users = await _userService.GetUsersByTrainer(trainerId);
+            if (users is null || users.Count == 0)
+            {
+                return NotFound("No users found");
+            }
+
+            return Ok(users);
+        }
+
         // Update user
         [Authorize(Policy = "All")]
         [HttpPut("{userId}")]

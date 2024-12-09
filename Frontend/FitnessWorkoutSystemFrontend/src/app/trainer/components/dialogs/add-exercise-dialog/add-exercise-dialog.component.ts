@@ -28,11 +28,17 @@ export class AddExerciseDialogComponent implements OnInit {
     sets: new FormControl<number | undefined>(undefined, [Validators.required, Validators.min(1)])
   }); 
 
+
+  /**
+   * Creates a new Workout object with the data from the form and adds to the associated WorkoutPlan. Then sends the updated workout plan to server.
+   *
+   * @memberof AddExerciseDialogComponent
+   */
   onSubmit() {
     if (this.addExerciseForm.valid) {
       // Get the workout plan from the array
       let currentPlan = this.workoutPlans.find(p => p.workoutPlanId == this.addExerciseForm.value.workoutId);
-      console.log(currentPlan);
+      // console.log(currentPlan);
       let newWorkout:Workout = {
         exerciseId: this.data.exerciseId,
         exerciseName: this.data.exerciseName,
@@ -40,6 +46,7 @@ export class AddExerciseDialogComponent implements OnInit {
         sets: this.addExerciseForm.value.sets ?? 0
       }
 
+      // Update the workout plan and send it to server
       if (currentPlan && currentPlan.workoutPlanId) {
         currentPlan.workouts?.push(newWorkout);
         this.dataService.updateWorkoutPlan(currentPlan.workoutPlanId, currentPlan).subscribe();
