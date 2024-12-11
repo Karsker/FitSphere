@@ -31,7 +31,7 @@ export class TrainerHomePageComponent {
     } 
     ); 
 
-    this.router.navigate(['/trainer/home/workout-plans']);
+    this.router.navigate(['/trainer/home/clients']);
   }
 
   // Items shown on the sidebar with their links

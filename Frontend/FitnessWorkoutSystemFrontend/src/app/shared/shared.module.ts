@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
-import { AppRoutingModule } from '../app-routing.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,11 +20,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ExerciseDescPageComponent } from './components/exercise-desc-page/exercise-desc-page.component';
 import { ViewExerciseButtonComponent } from './components/view-exercise-button/view-exercise-button.component';
-import { RouterModule } from '@angular/router';
 import { ViewWorkoutPlanDialogComponent } from './components/dialogs/view-workout-plan-dialog/view-workout-plan-dialog.component';
 import { WorkoutPlanDescPageComponent } from './pages/workout-plan-desc-page/workout-plan-desc-page.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ComingSoonPageComponent } from './pages/coming-soon-page/coming-soon-page.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -51,8 +51,9 @@ import { ComingSoonPageComponent } from './pages/coming-soon-page/coming-soon-pa
     MatTableModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    RouterModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -62,7 +63,6 @@ import { ComingSoonPageComponent } from './pages/coming-soon-page/coming-soon-pa
     MatSelectModule,
     MatButtonModule,
     MatStepperModule,
-    AppRoutingModule,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
@@ -74,7 +74,8 @@ import { ComingSoonPageComponent } from './pages/coming-soon-page/coming-soon-pa
     NavbarComponent,
     ExerciseDescPageComponent,
     ViewExerciseButtonComponent,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ]
 
 })

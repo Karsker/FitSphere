@@ -6,11 +6,15 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { Location } from '@angular/common';
+import { fadeIn, fadeOut } from '../../../shared/animations';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  styleUrl: './login-page.component.scss',
+  animations: [fadeIn, fadeOut]
 })
 export class LoginPageComponent implements OnInit {
 
@@ -18,7 +22,7 @@ export class LoginPageComponent implements OnInit {
   loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // Loading state
   mobileScreen!: boolean;
 
-  constructor(private apiService: ApiService, private auth: AuthService, private router: Router, private location: Location) {}
+  constructor(private apiService: ApiService, private auth: AuthService, private router: Router, private location: Location, private snackbar: MatSnackBar) {}
 
 
   loginForm = new FormGroup({
@@ -60,7 +64,7 @@ export class LoginPageComponent implements OnInit {
         // Login was successful
         if (res.token != undefined && res.user != undefined) {
           this.auth.saveUserInfo(res);
-         
+          this.snackbar.open(`Login successful`, undefined, {duration: 3000});
           // Reload the page to refresh URL
           window.location.reload();
           // Redirect the user to home page based on their role
@@ -68,6 +72,8 @@ export class LoginPageComponent implements OnInit {
             this.router.navigateByUrl('/user/home/dashboard', {replaceUrl: true});
           } else if (res.user.role == 'Trainer') {
             this.router.navigateByUrl('/trainer/home/workout-plans', {replaceUrl: true});
+          } else if (res.user.role == 'Admin') {
+            this.router.navigateByUrl('/admin/home', {replaceUrl: true});
           }
 
         }

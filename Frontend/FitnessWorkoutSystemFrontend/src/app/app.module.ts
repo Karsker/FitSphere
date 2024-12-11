@@ -7,9 +7,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/services/auth.service';
-import { UserModule } from './user/user.module';
 import { ApiService } from './shared/services/api.service';
-import { TrainerModule } from './trainer/trainer.module';
+import { AdminModule } from './admin/admin.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,8 +21,8 @@ import { TrainerModule } from './trainer/trainer.module';
     AppRoutingModule,
     MatSlideToggle,
     AuthModule,
-    UserModule,
-    TrainerModule
+    AdminModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideAnimationsAsync(),

@@ -95,6 +95,37 @@
   },
   {
     "ContainingType": "FitnessAndWorkoutSystem.Controllers.MessageController",
+    "Method": "GetAllMessages",
+    "RelativePath": "api/Message",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "senderId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "receiverId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessAndWorkoutSystem.Models.Message, FitnessAndWorkoutSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.MessageController",
     "Method": "AddMessage",
     "RelativePath": "api/Message",
     "HttpMethod": "POST",
@@ -110,9 +141,71 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FitnessAndWorkoutSystem.Controllers.MessageController",
-    "Method": "GetAllMessages",
-    "RelativePath": "api/Message/{userId}",
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.PaymentsController",
+    "Method": "GetAllPayments",
+    "RelativePath": "api/Payments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessAndWorkoutSystem.Models.Payment, FitnessAndWorkoutSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.PaymentsController",
+    "Method": "AddPayment",
+    "RelativePath": "api/Payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payment",
+        "Type": "FitnessAndWorkoutSystem.Models.Payment",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.PaymentsController",
+    "Method": "AddOrder",
+    "RelativePath": "api/Payments/orders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.StepsLogController",
+    "Method": "AddStepLog",
+    "RelativePath": "api/StepsLog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stepsLog",
+        "Type": "FitnessAndWorkoutSystem.Models.StepsLog",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.StepsLogController",
+    "Method": "GetStepLogsByUserId",
+    "RelativePath": "api/StepsLog/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -125,7 +218,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[FitnessAndWorkoutSystem.Models.Message, FitnessAndWorkoutSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[FitnessAndWorkoutSystem.Models.StepsLog, FitnessAndWorkoutSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -225,6 +318,48 @@
     "ReturnTypes": [
       {
         "Type": "FitnessAndWorkoutSystem.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.WorkoutLogController",
+    "Method": "AddWorkoutLog",
+    "RelativePath": "api/WorkoutLog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workoutLog",
+        "Type": "FitnessAndWorkoutSystem.Models.WorkoutLog",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitnessAndWorkoutSystem.Controllers.WorkoutLogController",
+    "Method": "GetWorkoutLogsByUserId",
+    "RelativePath": "api/WorkoutLog/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FitnessAndWorkoutSystem.Models.WorkoutLog, FitnessAndWorkoutSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -18,10 +18,10 @@ namespace FitnessAndWorkoutSystem.Controllers
         }
 
         [Authorize(Policy = "All")]
-        [HttpGet("{userId}")]
-        public async Task<ActionResult<List<Message>>> GetAllMessages(string userId)
+        [HttpGet]
+        public async Task<ActionResult<List<Message>>> GetAllMessages(string senderId, string receiverId)
         {
-            var messages = await _messageService.GetAllMessages(userId);
+            var messages = await _messageService.GetAllMessages(senderId, receiverId);
             return Ok(messages);
         }
 

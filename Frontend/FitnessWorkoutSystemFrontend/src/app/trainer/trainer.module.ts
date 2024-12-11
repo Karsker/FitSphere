@@ -8,7 +8,10 @@ import { ExercisesPageComponent } from './pages/exercises-page/exercises-page.co
 import { AddExerciseDialogComponent } from './components/dialogs/add-exercise-dialog/add-exercise-dialog.component';
 import { ClientsPageComponent } from './pages/clients-page/clients-page.component';
 import { AssignWorkoutDialogComponent } from './components/dialogs/assign-workout-dialog/assign-workout-dialog.component';
-
+import { ClientDashboardPageComponent } from './pages/client-dashboard-page/client-dashboard-page.component';
+import { TrainerRoutingModule } from './trainer-routing.module';
+import { MessageDialogComponent } from './components/dialogs/message-dialog/message-dialog.component';
+import { NewMessageComponent } from './components/dialogs/new-message/new-message.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,15 @@ import { AssignWorkoutDialogComponent } from './components/dialogs/assign-workou
     ExercisesPageComponent,
     AddExerciseDialogComponent,
     ClientsPageComponent,
-    AssignWorkoutDialogComponent
+    AssignWorkoutDialogComponent,
+    ClientDashboardPageComponent,
+    MessageDialogComponent,
+    NewMessageComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    TrainerRoutingModule
   ]
 })
 export class TrainerModule { }

@@ -1,15 +1,23 @@
 mat-sidenav {
     width: 250px;
-    height: calc(100vh - 4rem);
+    min-height: calc(100vh - 4rem);
 }
 
 mat-sidenav-content {
-    height: calc(100vh - 4rem);
+    min-height: calc(100vh - 4rem);
 }
 
 mat-list-item div {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+mat-sidenav-container {
+    top: 4rem;
+}
+
+mat-list {
+    margin-top: 4rem;
 }
 

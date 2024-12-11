@@ -15,9 +15,9 @@ namespace FitnessAndWorkoutSystem.Repositories
         }
 
         // Get all messasges for a user
-        public async Task<List<Message>> GetAll(string userId)
+        public async Task<List<Message>> GetAll(string senderId, string receiverId)
         {
-            var messages = await _messagesCollection.Find(m => (m.FromId == userId || m.ToId == userId)).ToListAsync();
+            var messages = await _messagesCollection.Find(m => ((m.FromId == senderId && m.ToId == receiverId) || (m.FromId == receiverId && m.ToId == senderId))).ToListAsync();
             return messages;
         }
 

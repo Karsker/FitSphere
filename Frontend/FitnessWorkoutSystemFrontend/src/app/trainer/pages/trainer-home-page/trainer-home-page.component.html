@@ -4,22 +4,14 @@
       
   
       <!-- Sidebar -->
-      <mat-sidenav #sidebar [mode]="mobileScreen?'over':'side'" [opened]="mobileScreen?false:true">
+      <mat-sidenav #sidebar fixedInViewport  [mode]="mobileScreen?'over':'side'" [opened]="mobileScreen?false:true">
           <mat-list>
               <mat-list-item *ngFor="let item of navItems" [routerLink]="item.link">
                 <div>
                   <img [src]="item.icon" width="25" alt="">
                   {{ item.name }}
                 </div>
-          </mat-list-item>
-          
-          <!-- Logout button -->
-          <!-- <mat-list-item>
-            <div>
-              <img src="assets/icons/navigation/logout.png" alt="logout" width="25">
-              <span class="text-red-500 font-semibold"><button (click)="logout()">Logout</button></span>
-            </div>
-          </mat-list-item> -->
+              </mat-list-item>
   
           </mat-list>
       </mat-sidenav>

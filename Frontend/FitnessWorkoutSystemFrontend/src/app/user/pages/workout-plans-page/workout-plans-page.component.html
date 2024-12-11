@@ -1,7 +1,7 @@
 
 <section class="h-full">
-    <div class="h-60 w-full p-4 bg-black">
-        <!-- <img src="assets/images/exercises/exercisesListBanner.jpg" class="object-contain object-center"  alt="exercises-banner"> -->
+    <div class="w-full p-4 h-32 bg-cover flex justify-center items-center" style="background-image: url('assets/images/workoutsBanner.png')">
+        
         <h1 class="text-4xl font-bold text-white">Workout Plans</h1>
     </div>
 
@@ -9,13 +9,13 @@
     <div class="max-w-full overflow-x-scroll">
         <table mat-table [dataSource]="workoutPlans">
     
-            <!-- Plan Name column -->
+            <!-- Exercise column -->
             <ng-container matColumnDef="PlanName">
                 <th mat-header-cell *matHeaderCellDef>Plan Name</th>
                 <td mat-cell *matCellDef="let workoutPlan"> {{ workoutPlan.workoutPlanName }} </td>
             </ng-container>
     
-            <!-- Goal column -->
+            <!-- Reps column -->
             <ng-container matColumnDef="Goal">
                 <th mat-header-cell *matHeaderCellDef>Goal</th>
                 <td mat-cell *matCellDef="let workoutPlan"> {{ workoutPlan.goal }} </td>

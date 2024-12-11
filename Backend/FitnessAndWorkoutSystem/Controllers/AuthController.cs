@@ -43,6 +43,15 @@ namespace FitnessAndWorkoutSystem.Controllers
             {
                 return BadRequest("Password does not meet recommended security requirements");
             }
+
+            // Check if email already exists
+            var userFromDb = await _userService.GetUserByEmail(user.Email);
+
+            if (userFromDb is not null)
+            {
+                return Conflict("Email already exists");
+            }
+            
             await _userService.AddUser(user);
             return Ok();
         }

@@ -17,8 +17,8 @@ export class MessageService {
    * @return {*}  {Observable<Object>} - Array of messages as an observable
    * @memberof MessageService
    */
-  getAllMessages(userId: string): Observable<Object> {
-    return this.api.get(`/message/${userId}`);
+  getAllMessages(senderId: string, receiverId: string): Observable<Object> {
+    return this.api.get(`/message/`, {senderId, receiverId});
   }
 
   /**

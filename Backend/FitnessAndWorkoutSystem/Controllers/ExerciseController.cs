@@ -41,7 +41,7 @@ namespace FitnessAndWorkoutSystem.Controllers
         }
 
         // TODO: Make Admin access only
-        [Authorize(Policy = "All")]
+        [Authorize(Policy = "AdminOnly")]
         [HttpPost]
         public async Task<IActionResult> AddExercise(Exercise exercise)
         {

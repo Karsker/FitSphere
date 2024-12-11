@@ -6,11 +6,13 @@ import { AuthService } from '../../../auth/services/auth.service';
 import { ViewExerciseButtonComponent } from '../../../shared/components/view-exercise-button/view-exercise-button.component';
 import { AddExerciseDialogComponent } from '../../components/dialogs/add-exercise-dialog/add-exercise-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { fadeIn, fadeOut } from '../../../shared/animations';
 
 @Component({
   selector: 'app-exercises-page',
   templateUrl: './exercises-page.component.html',
-  styleUrl: './exercises-page.component.scss'
+  styleUrl: './exercises-page.component.scss',
+  animations: [fadeIn, fadeOut]
 })
 export class ExercisesPageComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-<section *ngIf="exercise != undefined" class="p-6 flex flex-col gap-3">
+<section  @fadeIn @fadeOut *ngIf="exercise != undefined" class="p-6 flex flex-col gap-3">
   <a routerLink="../../exercises" class="text-blue-500">Back</a>
   <h1 class="text-3xl font-bold">{{ exercise.name }}</h1>
 

@@ -5,6 +5,7 @@ import { NgIf } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { MessageDialogComponent } from '../dialogs/message-dialog/message-dialog.component';
 import { NewMessageComponent } from '../dialogs/new-message/new-message.component';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-trainer-messages',
@@ -21,12 +22,13 @@ export class TrainerMessagesComponent implements OnInit {
   messages: Message[] = []; // Array to store messages between trainer and user
   displayedColumns = ["From", "To", "Date", "View"]; // Columns to be displayed in the messages table
   
-  constructor(private messageService: MessageService, private dialog: MatDialog) { }
+  constructor(private messageService: MessageService, private dialog: MatDialog, private auth: AuthService) { }
 
   ngOnInit(): void {
 
     // Get all the messages between the trainer and user
-    this.messageService.getAllMessages(this.trainerId).subscribe(data => {
+    if (this.auth.CurrentUserId)
+    this.messageService.getAllMessages(this.trainerId, this.auth.CurrentUserId).subscribe(data => {
       this.messages = data as Message[];
     });
   }

@@ -1,0 +1,69 @@
+<section @fadeIn @fadeOut class="flex flex-col p-10 gap-5">
+    <app-user-profile-header  />
+    
+    <!-- Calories and steps -->
+    <div class="text-2xl flex gap-2 items-center font-semibold">
+        <h2>Your Day</h2>
+    </div>
+    <div class="flex flex-col md:flex-row md:justify-around gap-5">
+        <div class="flex gap-3 items-center text-lg">
+            <img src="assets/icons/dashboard/fire.png" width="50" alt="calories" >
+            {{ calories }} Calories
+        </div>
+    
+        <div class="flex gap-3 items-center text-lg">
+            <img src="assets/icons/dashboard/steps.png" width="50" alt="steps">
+            {{ steps }} Steps
+        </div>
+
+        <div class="flex gap-3 items-center text-lg">
+            <img src="assets/icons/dashboard/distance.png" width="50" alt="distance">
+            {{ distance }} Km
+        </div>
+
+    </div>
+    <mat-divider />
+
+    <!-- Workout History -->
+    <div class="text-2xl flex gap-2 items-center font-semibold">
+        <h2>Your Workout History</h2>
+        <app-update-button (click)="openAddWorkoutLogDialog()"/>
+    </div>
+    <div class="max-w-full overflow-x-scroll">
+        <table mat-table [dataSource]="workoutLogs">
+    
+            <!-- Exercise column -->
+        <ng-container matColumnDef="exercise">
+            <th mat-header-cell *matHeaderCellDef>Exercise</th>
+            <td mat-cell *matCellDef="let log"> {{ log.exerciseName }} </td>
+        </ng-container>
+
+        <!-- Reps column -->
+        <ng-container matColumnDef="reps">
+            <th mat-header-cell *matHeaderCellDef>Reps</th>
+            <td mat-cell *matCellDef="let log"> {{ log.reps }} </td>
+        </ng-container>
+
+        <!-- Sets column -->
+        <ng-container matColumnDef="sets">
+            <th mat-header-cell *matHeaderCellDef>Sets</th>
+            <td mat-cell *matCellDef="let log">{{ log.sets }}</td>
+        </ng-container>
+
+        <!-- Calories column -->
+        <ng-container matColumnDef="calories">
+            <th mat-header-cell *matHeaderCellDef>Calories</th>
+            <td mat-cell *matCellDef="let log">{{ log.calories }}</td>
+        </ng-container>
+
+        <!-- Date column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let log">{{ log.date | date: 'longDate' }}</td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</section>

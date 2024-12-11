@@ -14,6 +14,7 @@ export interface User {
     height?: number,
     targetWeight?: number,
     workoutPlans: string[],
+    hasPremium: boolean
 }
 
 export interface Exercise {
@@ -54,4 +55,39 @@ export interface WorkoutPlan {
     workouts?: Workout[],
     goal: string,
     days: string[]
+}
+
+export interface WorkoutLog {
+    id?: string,
+    logId?: string,
+    userId: string,
+    exerciseName: string,
+    reps: number,
+    sets: number,
+    calories: number,
+    date?: Date
+}
+
+export interface StepsLog {
+    id?: string,
+    logId?: string,
+    userId: string,
+    steps: number,
+    distance: number,
+    calories: number,
+    date?: Date
+}
+
+export interface PaymentOrder {
+    orderId: string
+}
+
+export interface Payment {
+    id?: string,
+    paymentId?: string,
+    razorpayPaymentId: string,
+    userId: string,
+    amount: number,
+    paymentFor: string,
+    date?: Date
 }

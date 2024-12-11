@@ -30,12 +30,18 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IWorkoutPlanRepository, WorkoutPlanRepository>();
+builder.Services.AddScoped<IWorkoutLogRepository, WorkoutLogRepository>();
+builder.Services.AddScoped<IStepsLogRepository, StepsLogRepository>();
+builder.Services.AddScoped<IPaymentsRepository, PaymentsRepository>();
 
 // Services
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IWorkoutPlanService, WorkoutPlanService>();
+builder.Services.AddScoped<IWorkoutLogService, WorkoutLogService>();
+builder.Services.AddScoped<IStepsLogService, StepsLogService>();
+builder.Services.AddScoped<IPaymentsService, PaymentsService>();
 
 builder.Services.AddSingleton<JWTService>();
 
@@ -69,9 +75,10 @@ builder.Services.AddAuthentication(i =>
 // Authorization
 builder.Services.AddAuthorization(i =>
 {
+    i.AddPolicy("AdminOnly", j => j.RequireRole("Admin"));
     i.AddPolicy("TrainerOnly", j => j.RequireRole("Trainer"));
     i.AddPolicy("UserOnly", j => j.RequireRole("User"));
-    i.AddPolicy("All", j => j.RequireRole("Trainer", "User"));
+    i.AddPolicy("All", j => j.RequireRole("Trainer", "User", "Admin"));
 });
 
 var app = builder.Build();

@@ -17,6 +17,9 @@ C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSys
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\MongoDB.Bson.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\MongoDB.Driver.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\BouncyCastle.Crypto.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\Razorpay.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\SharpCompress.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\Snappier.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll

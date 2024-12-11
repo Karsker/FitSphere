@@ -52,5 +52,7 @@ namespace FitnessAndWorkoutSystem.Models
 
         public required string[] WorkoutPlans { get; set; }
 
+        public required bool HasPremium {  get; set; }  
+
     }
 }

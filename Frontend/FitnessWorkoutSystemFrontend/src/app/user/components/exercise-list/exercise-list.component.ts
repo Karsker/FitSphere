@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
 import { Exercise } from '../../../types';
 import { ViewExerciseButtonComponent } from '../../../shared/components/view-exercise-button/view-exercise-button.component';
+import { fadeIn, fadeOut } from '../../../shared/animations';
+
 
 @Component({
   selector: 'app-exercise-list',
   templateUrl: './exercise-list.component.html',
-  styleUrl: './exercise-list.component.scss'
+  styleUrl: './exercise-list.component.scss',
+  animations: [fadeIn, fadeOut]
 })
 export class ExerciseListComponent {
   exercisesList!: Exercise[]; // Array to store the exercises

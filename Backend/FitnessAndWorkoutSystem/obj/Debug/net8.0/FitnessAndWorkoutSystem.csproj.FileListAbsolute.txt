@@ -46,3 +46,6 @@ C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSys
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\obj\Debug\net8.0\FitnessAndWorkoutSystem.sourcelink.json
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Users\karth\Code\Chubb Training\Capstone Project\Backend\FitnessAndWorkoutSystem\bin\Debug\net8.0\Razorpay.dll

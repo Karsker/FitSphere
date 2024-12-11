@@ -1,0 +1,100 @@
+<h2 mat-dialog-title>Add Workout Log</h2>
+<mat-dialog-content class="md:w-96">
+  <form
+    id="addWorkoutLogForm"
+    [formGroup]="addWorkoutLogForm"
+    (submit)="onSubmit()"
+  >
+    <div class="flex flex-col">
+      <mat-form-field>
+        <mat-label> Workout Type </mat-label>
+        <mat-select #workoutType formControlName="workoutType" name="workoutType">
+          <mat-option value="Walking/Running">Walking/Running</mat-option>
+          <mat-option value="Exercise">Exercise</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Exercise log entry is shown when Exercise is selected from Workout Type dropdown -->
+
+      <mat-form-field *ngIf="workoutType.value == 'Exercise'">
+        <mat-label>Exercise</mat-label>
+        <mat-select formControlName="exerciseName" name="exerciseName">
+          <mat-option
+            *ngFor="let exercise of data.exercises"
+            [value]="exercise.name"
+            >{{ exercise.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="workoutType.value == 'Exercise'">
+        <mat-label>Reps</mat-label>
+        <input
+          matInput
+          type="number"
+          min="1"
+          formControlName="reps"
+          name="reps"
+        />
+      </mat-form-field>
+
+      <mat-form-field *ngIf="workoutType.value == 'Exercise'">
+        <mat-label>Sets</mat-label>
+        <input
+          matInput
+          type="number"
+          min="1"
+          formControlName="sets"
+          name="sets"
+        />
+      </mat-form-field>
+
+	  <mat-form-field *ngIf="workoutType.value == 'Walking/Running'">
+        <mat-label>Steps</mat-label>
+        <input
+          matInput
+          type="number"
+          min="1"
+          formControlName="steps"
+          name="steps"
+        />
+      </mat-form-field>
+
+	  <mat-form-field *ngIf="workoutType.value == 'Walking/Running'">
+        <mat-label>Distance</mat-label>
+        <input
+          matInput
+          type="number"
+          min="1"
+          formControlName="distance"
+          name="distance"
+        />
+		<span matSuffix class="px-4">Km</span>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Calories</mat-label>
+        <input
+          #calories
+          matInput
+          type="number"
+          min="1"
+          formControlName="calories"
+          name="calories"
+        />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-flat-button
+    [mat-dialog-close]="addWorkoutLogForm.value"
+    color="primary"
+    type="submit"
+    form="addWorkoutLogForm"
+  >
+    Add
+  </button>
+  <button mat-stroked-button mat-dialog-close color="primary">Cancel</button>
+</mat-dialog-actions>

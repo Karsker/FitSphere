@@ -5,7 +5,7 @@ namespace FitnessAndWorkoutSystem.Interfaces
     public interface IMessageRepository
     {
         
-        public Task<List<Message>> GetAll(string userId);
+        public Task<List<Message>> GetAll(string senderId, string receiverId);
 
         public Task Add(Message message);
     }

@@ -6,16 +6,19 @@ import { NgStyle } from '@angular/common';
 import { AuthService } from '../../../auth/services/auth.service';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { Router } from '@angular/router';
+import { User } from '../../../types';
+import { UserService } from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-user-home-page',
   templateUrl: './user-home-page.component.html',
-  styleUrl: './user-home-page.component.scss'
+  styleUrl: './user-home-page.component.scss',
 })
 export class UserHomePageComponent implements OnInit {
   currentSelection: number = 1;
   mobileScreen!: boolean;
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private userSvc: UserService) {}
+  currentUser!: User;
 
   ngOnInit(): void {
 
@@ -34,6 +37,12 @@ export class UserHomePageComponent implements OnInit {
     } 
     ); 
 
+    this.userSvc.CurrentUser.subscribe(user => {
+      if (user) {
+        this.currentUser = user;
+      }
+    });
+
     this.router.navigate(['/user/home/dashboard']);
 
   }
@@ -43,43 +52,50 @@ export class UserHomePageComponent implements OnInit {
       name: "Dashboard",
       selection: 1,
       link: "dashboard",
-      icon: "assets/icons/navigation/home.png"
+      icon: "assets/icons/navigation/home.png",
+      requiresPremium: false,
     },
     {
       name: "Trainer",
       selection: 2,
       link: "trainer",
-      icon: "assets/icons/navigation/supervisor.png"
+      icon: "assets/icons/navigation/supervisor.png",
+      requiresPremium: true,
     },
     {
       name: "Nutritionist",
       selection: 3,
       link: "nutritionist",
-      icon: "assets/icons/navigation/supervisor.png"
+      icon: "assets/icons/navigation/supervisor.png",
+      requiresPremium: true,
     },
     {
       name: "Exercises",
       selection: 4,
       link: "exercises",
-      icon: "assets/icons/navigation/exercise.png"
+      icon: "assets/icons/navigation/exercise.png",
+      requiresPremium: false,
     },
     {
       name: "Meals",
       selection: 5,
       link: "meals",
-      icon: "assets/icons/navigation/meals.png"
+      icon: "assets/icons/navigation/meals.png",
+      requiresPremium: false,
     },
     {
       name: "Meal Plans",
       selection: 6,
       link: "meal-plans",
-      icon: "assets/icons/navigation/plan.png"
+      icon: "assets/icons/navigation/plan.png",
+      requiresPremium: true,
     },
     {
       name: "Workout Plans",
       selection: 7,
       link: "workout-plans",
-      icon: "assets/icons/navigation/plan.png"
+      icon: "assets/icons/navigation/plan.png",
+      requiresPremium: true,
     }
   ]
 

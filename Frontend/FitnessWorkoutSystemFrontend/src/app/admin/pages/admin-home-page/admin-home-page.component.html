@@ -1,0 +1,26 @@
+<section class="relative w-screen h-screen">
+    <app-navbar (toggleSidebar)="sidebar.toggle()"/>
+    <mat-sidenav-container>
+      
+  
+      <!-- Sidebar -->
+      <mat-sidenav #sidebar fixedInViewport [mode]="mobileScreen?'over':'side'" [opened]="mobileScreen?false:true">
+          <mat-list>
+              <mat-list-item *ngFor="let item of navItems" [ngStyle]="currentSelection == item.selection ? {'background-color': 'seashell'} : {'background-color' : 'white'} " class="hover:bg-stone-100" [routerLink]="item.link" (click)="setCurrentSelection(item.selection)">
+                <div>
+                  <img [src]="item.icon" width="25" alt="">
+                  {{ item.name }}
+                </div>
+          </mat-list-item>
+        
+  
+          </mat-list>
+      </mat-sidenav>
+  
+      <!-- Main content -->
+      <mat-sidenav-content class="bg-white">
+           <router-outlet />
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </section>
+  

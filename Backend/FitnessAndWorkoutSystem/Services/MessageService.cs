@@ -12,9 +12,9 @@ namespace FitnessAndWorkoutSystem.Services
             _repo = repo;
         }
 
-        public async Task<List<Message>> GetAllMessages(string userId)
+        public async Task<List<Message>> GetAllMessages(string senderId, string receiverId)
         {
-            var messages = await _repo.GetAll(userId);
+            var messages = await _repo.GetAll(senderId, receiverId);
             return messages;
         }
 

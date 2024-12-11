@@ -8,10 +8,13 @@ import { UserService } from '../../../shared/services/user.service';
 import { NgIf } from '@angular/common';
 import { TrainerProfileHeaderComponent } from '../../components/trainer-profile-header/trainer-profile-header.component';
 import { TrainerMessagesComponent } from '../../components/trainer-messages/trainer-messages.component';
+import { fadeIn, fadeOut } from '../../../shared/animations';
+
 @Component({
   selector: 'app-trainers-list-page',
   templateUrl: './trainers-list-page.component.html',
-  styleUrl: './trainers-list-page.component.scss'
+  styleUrl: './trainers-list-page.component.scss',
+  animations: [fadeIn, fadeOut]
 })
 
 export class TrainersListPageComponent implements OnInit {

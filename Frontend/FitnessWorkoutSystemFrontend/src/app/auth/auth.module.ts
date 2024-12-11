@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { Router, RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     RegisterPageComponent,
@@ -15,7 +16,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
 })
 export class AuthModule { }
