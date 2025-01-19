@@ -62,7 +62,7 @@ export class DashboardPageComponent implements OnInit {
     // Update stats
     dialogRef.afterClosed().subscribe(formData => {
       if (formData.calories) this.calories += parseInt(formData.calories);
-      if (formData.steps) this.steps += parseInt(formData.calories);
+      if (formData.steps) this.steps += parseInt(formData.steps);
       if (formData.distance) this.distance += parseFloat(formData.distance);
     });
   }

@@ -6,7 +6,7 @@
       <!-- Sidebar -->
       <mat-sidenav #sidebar fixedInViewport [mode]="mobileScreen?'over':'side'" [opened]="mobileScreen?false:true">
           <mat-list>
-              <mat-list-item *ngFor="let item of navItems" [ngStyle]="currentSelection == item.selection ? {'background-color': 'seashell'} : {'background-color' : 'white'} " class="hover:bg-stone-100" [routerLink]="item.link" (click)="setCurrentSelection(item.selection)">
+              <mat-list-item *ngFor="let item of navItems" [ngStyle]="currentSelection == item.selection ? {'background-color': 'lightgray'} : {'background-color' : 'white'}" [routerLink]="item.link" (click)="setCurrentSelection(item.selection)">
                 <div>
                   <img [src]="item.icon" width="25" alt="">
                   {{ item.name }}

@@ -87,4 +87,24 @@ export class UserService {
     return this.api.request('PUT', `/user/${userId}`, JSON.stringify(userData));
   }
 
+  /**
+   * Gets all users from the server (can only be called by Admin)
+   *
+   * @return {*}  {Observable<Object>}
+   * @memberof UserService
+   */
+  getAllUsers(): Observable<Object> {
+    return this.api.get('/user/all');
+  }
+
+  /**
+   * Deletes a single user by their User ID
+   *
+   * @param {string} userId - The User ID of the user to delete
+   * @return {*} 
+   * @memberof UserService
+   */
+  deleteUser(userId: string) {
+    return this.api.request('DELETE', `/user/${userId}`);
+  }
 }

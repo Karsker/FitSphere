@@ -5,6 +5,7 @@ import { PaymentOrder } from '../../../types';
 import { WindowRefService } from '../../../shared/services/window-ref.service';
 import { UserService } from '../../../shared/services/user.service';
 import { fadeIn, fadeOut } from '../../../shared/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class PremiumGatewayPageComponent {
     "handler": (res: any) => this.handleTransaction(res)
   };
 
-  constructor(private payment: PaymentService, private winRef: WindowRefService, private userSvc: UserService){};
+  constructor(private payment: PaymentService, private winRef: WindowRefService, private userSvc: UserService, private router: Router){};
 
   /**
    * Start the payment process by sending an order request to server
@@ -59,7 +60,9 @@ export class PremiumGatewayPageComponent {
           this.userSvc.setCurrentUser(updatedUser);
 
           if (updatedUser.userId) {
-            this.userSvc.updateUser(updatedUser.userId, updatedUser).subscribe();
+            this.userSvc.updateUser(updatedUser.userId, updatedUser).subscribe(res => {
+              window.location.reload();
+            });
           }
         }
       });

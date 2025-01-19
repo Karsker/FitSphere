@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|c:\\users\\karth\\code\\chubb training\\capstone project\\backend\\fitnessandworkoutsystem\\controllers\\exercisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|solutionrelative:controllers\\exercisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|c:\\users\\karth\\code\\chubb training\\capstone project\\backend\\fitnessandworkoutsystem\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|solutionrelative:controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|c:\\users\\karth\\code\\chubb training\\capstone project\\backend\\fitnessandworkoutsystem\\repositories\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|solutionrelative:repositories\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|c:\\users\\karth\\code\\chubb training\\capstone project\\backend\\fitnessandworkoutsystem\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|solutionrelative:services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|c:\\users\\karth\\code\\chubb training\\capstone project\\backend\\fitnessandworkoutsystem\\interfaces\\imessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C932ADC9-7239-4FDC-863B-2F79E181A337}|FitnessAndWorkoutSystem.csproj|solutionrelative:interfaces\\imessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,71 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ExerciseController.cs",
-              "DocumentMoniker": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Controllers\\ExerciseController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ExerciseController.cs",
-              "ToolTip": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Controllers\\ExerciseController.cs",
-              "RelativeToolTip": "Controllers\\ExerciseController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAUwCsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T05:20:25.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MessageRepository.cs",
-              "DocumentMoniker": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Repositories\\MessageRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\MessageRepository.cs",
-              "ToolTip": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Repositories\\MessageRepository.cs",
-              "RelativeToolTip": "Repositories\\MessageRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAkwBMAAACfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T04:25:15.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MessageService.cs",
-              "DocumentMoniker": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Services\\MessageService.cs",
-              "RelativeDocumentMoniker": "Services\\MessageService.cs",
-              "ToolTip": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Services\\MessageService.cs",
-              "RelativeToolTip": "Services\\MessageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T04:19:10.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IMessageService.cs",
-              "DocumentMoniker": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Interfaces\\IMessageService.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IMessageService.cs",
-              "ToolTip": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Interfaces\\IMessageService.cs",
-              "RelativeToolTip": "Interfaces\\IMessageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T04:18:49.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MessageController.cs",
-              "DocumentMoniker": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Controllers\\MessageController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MessageController.cs",
-              "ToolTip": "C:\\Users\\karth\\Code\\Chubb Training\\Capstone Project\\Backend\\FitnessAndWorkoutSystem\\Controllers\\MessageController.cs",
-              "RelativeToolTip": "Controllers\\MessageController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBUAAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T04:17:15.867Z",
-              "EditorCaption": ""
             }
           ]
         }

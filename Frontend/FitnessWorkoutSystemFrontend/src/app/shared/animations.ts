@@ -7,7 +7,7 @@ const enterTransition = transition(':enter', [
   animate('0.25s ease-in', style({ opacity: 1 })),
 ]);
 
-const exitTransition = transition(':exit', [
+const exitTransition = transition(':leave', [
     style({
       opacity: 1,
     }),
@@ -16,4 +16,4 @@ const exitTransition = transition(':exit', [
 
 export const fadeIn = trigger('fadeIn', [enterTransition]);
 
-export const fadeOut = trigger('fadeOut', [enterTransition]);
+export const fadeOut = trigger('fadeOut', [exitTransition]);

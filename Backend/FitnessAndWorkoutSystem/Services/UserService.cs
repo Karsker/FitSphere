@@ -38,6 +38,12 @@ namespace FitnessAndWorkoutSystem.Services
             await _userRepo.Add(user);
         }
 
+        public async Task<List<User>> GetAllUsers()
+        {
+            var users = await _userRepo.GetAll();
+            return users;
+        }
+
         public async Task<User?> GetUserByEmail(string email)
         {
             return await _userRepo.GetByEmail(email);
@@ -60,6 +66,11 @@ namespace FitnessAndWorkoutSystem.Services
         public async Task UpdateUser(string userId, User user)
         {
             await _userRepo.UpdateUser(userId, user);
+        }
+
+        public async Task DeleteUser(string userId)
+        {
+            await _userRepo.Delete(userId);
         }
     }
 }

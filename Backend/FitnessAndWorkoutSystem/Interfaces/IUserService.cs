@@ -6,6 +6,8 @@ namespace FitnessAndWorkoutSystem.Interfaces
     {
         public Task AddUser(User user);
 
+        public Task<List<User>> GetAllUsers();
+
         public Task<User?> GetUserByEmail(string email);
 
         public Task<User?> GetUserById(string userId);
@@ -14,5 +16,7 @@ namespace FitnessAndWorkoutSystem.Interfaces
 
         public Task<List<User>?> GetUsersByTrainer(string trainerId);
         public Task UpdateUser(string userId, User user);
+
+        public Task DeleteUser(string userId);
     }
 }

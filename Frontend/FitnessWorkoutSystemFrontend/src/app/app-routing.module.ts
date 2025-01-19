@@ -42,6 +42,11 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     title: 'FitSphere | Admin Panel',
     canActivate: [adminAccessGuard],
+  },
+  {
+    path: 'nutritionist/home',
+    loadChildren: () => import('./nutritionist/nutritionist.module').then(m => m.NutritionistModule),
+    title: 'Home'
   }
   
 ];

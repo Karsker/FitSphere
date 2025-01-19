@@ -26,6 +26,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { ComingSoonPageComponent } from './pages/coming-soon-page/coming-soon-page.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
+import { MealsListPageComponent } from './pages/meals-list-page/meals-list-page.component';
+import { MealDescPageComponent } from './pages/meal-desc-page/meal-desc-page.component';
+import { ViewMealButtonComponent } from './components/view-meal-button/view-meal-button.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { RouterModule } from '@angular/router';
     ViewExerciseButtonComponent,
     ViewWorkoutPlanDialogComponent,
     WorkoutPlanDescPageComponent,
-    ComingSoonPageComponent
+    ComingSoonPageComponent,
+    MealsListPageComponent,
+    MealDescPageComponent,
+    ViewMealButtonComponent
   ],
   imports: [
     CommonModule,

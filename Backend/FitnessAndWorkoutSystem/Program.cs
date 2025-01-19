@@ -33,6 +33,7 @@ builder.Services.AddScoped<IWorkoutPlanRepository, WorkoutPlanRepository>();
 builder.Services.AddScoped<IWorkoutLogRepository, WorkoutLogRepository>();
 builder.Services.AddScoped<IStepsLogRepository, StepsLogRepository>();
 builder.Services.AddScoped<IPaymentsRepository, PaymentsRepository>();
+builder.Services.AddScoped<IMealsRepository, MealsRepository>();
 
 // Services
 builder.Services.AddScoped<IUserService, UserService>();
@@ -42,6 +43,7 @@ builder.Services.AddScoped<IWorkoutPlanService, WorkoutPlanService>();
 builder.Services.AddScoped<IWorkoutLogService, WorkoutLogService>();
 builder.Services.AddScoped<IStepsLogService, StepsLogService>();
 builder.Services.AddScoped<IPaymentsService, PaymentsService>();
+builder.Services.AddScoped<IMealsService, MealsService>();
 
 builder.Services.AddSingleton<JWTService>();
 

@@ -91,3 +91,18 @@ export interface Payment {
     paymentFor: string,
     date?: Date
 }
+
+export interface Meal {
+    id?: string,
+    mealId?: string,
+    name: string,
+    type: string,
+    ingredients: string[],
+    description: string,
+    recipe: string[],
+    videoLink: string,
+    calories: number,
+    carbohydrate: number,
+    protein: number,
+    fat: number
+}

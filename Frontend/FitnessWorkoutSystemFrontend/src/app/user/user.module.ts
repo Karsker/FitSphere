@@ -17,6 +17,7 @@ import { AddWorkoutLogDialogComponent } from './components/dialogs/add-workout-l
 import { PremiumGatewayPageComponent } from './pages/premium-gateway-page/premium-gateway-page.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRoutingModule } from './user-routing.module';
+import { NutritionistsListPageComponent } from './pages/nutritionists-list-page/nutritionists-list-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UserRoutingModule } from './user-routing.module';
     UpdateButtonComponent,
     AddWorkoutLogDialogComponent,
     PremiumGatewayPageComponent,
+    NutritionistsListPageComponent,
     
   ],
   imports: [

@@ -17,6 +17,14 @@ namespace FitnessAndWorkoutSystem.Controllers
             _userService = userService;
         }
 
+        // Get all users
+        [Authorize(Policy = "AdminOnly")]
+        [HttpGet("all")]
+        public async Task<ActionResult<List<User>>> GetAllUsers()
+        {
+            return await _userService.GetAllUsers();
+        }
+
         // Get a user by ID
         [Authorize(Policy = "All")]
         [HttpGet("search/{id}")]
@@ -66,6 +74,15 @@ namespace FitnessAndWorkoutSystem.Controllers
         {
             await _userService.UpdateUser(userId, user);
             return CreatedAtAction(nameof(GetUserById), new { id = userId }, user);
+        }
+
+        // Delete User
+        [Authorize(Policy = "AdminOnly")]
+        [HttpDelete("{userId}")]
+        public async Task<IActionResult> DeleteUser(string userid)
+        {
+            await _userService.DeleteUser(userid);
+            return NoContent();
         }
     }
 }

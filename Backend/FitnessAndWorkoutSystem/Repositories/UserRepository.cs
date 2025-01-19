@@ -27,6 +27,13 @@ namespace FitnessAndWorkoutSystem.Repositories
             return;
         }
 
+        // Get all users
+        public async Task<List<User>> GetAll()
+        {
+            var users = await _usersCollection.Find(_ => true).ToListAsync();
+            return users;
+        }
+
         // Get user by email
         public async Task<User?> GetByEmail(string email)
         {
@@ -72,6 +79,18 @@ namespace FitnessAndWorkoutSystem.Repositories
             // Set the object id of the original document
             user.Id = userFromDb.Id;
             await _usersCollection.ReplaceOneAsync(u => u.UserId == userId, user);
+        }
+
+        // Delete user
+        public async Task Delete(string userId)
+        {
+            // Get the user
+            var userFromDb = await GetById(userId);
+            if (userFromDb is null)
+            {
+                return;
+            }
+            await _usersCollection.DeleteOneAsync(u => u.UserId == userId);
         }
     }
 }

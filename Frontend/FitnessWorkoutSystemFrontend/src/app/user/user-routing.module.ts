@@ -10,6 +10,8 @@ import { PremiumGatewayPageComponent } from './pages/premium-gateway-page/premiu
 import { ComingSoonPageComponent } from '../shared/pages/coming-soon-page/coming-soon-page.component';
 import { WorkoutPlanDescPageComponent } from '../shared/pages/workout-plan-desc-page/workout-plan-desc-page.component';
 import { WorkoutPlansPageComponent } from './pages/workout-plans-page/workout-plans-page.component';
+import { MealsListPageComponent } from '../shared/pages/meals-list-page/meals-list-page.component';
+import { MealDescPageComponent } from '../shared/pages/meal-desc-page/meal-desc-page.component';
 const routes: Routes = [
   {
     path: '',
@@ -43,17 +45,23 @@ const routes: Routes = [
       {
         path: 'nutritionist',
         title: 'Nutritionist',
-        component: ComingSoonPageComponent
+        component: ComingSoonPageComponent,
+        canActivate: [premiumAccessGuard]
       },
       {
         path: 'meals',
         title: 'Meals',
-        component: ComingSoonPageComponent
+        component: MealsListPageComponent
+      },
+      {
+        path: 'meal/:id',
+        component: MealDescPageComponent
       },
       {
         path: 'meal-plans',
         title: 'Meal Plans',
-        component: ComingSoonPageComponent
+        component: ComingSoonPageComponent,
+        canActivate: [premiumAccessGuard]
       },
       {
         path: 'workout-plans/:id',

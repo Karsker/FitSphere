@@ -21,8 +21,8 @@ export class AddWorkoutLogDialogComponent {
     reps: new FormControl<number>(1, [Validators.required, Validators.min(1)]),
     sets: new FormControl<number>(1, [Validators.required, Validators.min(1)]),
     calories: new FormControl<number>(1, [Validators.required, Validators.min(1)]),
-    steps: new FormControl<number>(1, [Validators.required, Validators.min(1)]),
-    distance: new FormControl<number>(1, [Validators.required, Validators.min(1)])
+    steps: new FormControl<number>(0, [Validators.required, Validators.min(1)]),
+    distance: new FormControl<number>(0, [Validators.required, Validators.min(1)])
   });
 
   onSubmit() {

@@ -1,12 +1,12 @@
 <section class="relative w-screen h-screen">
   <app-navbar (toggleSidebar)="sidebar.toggle()"/>
-  <mat-sidenav-container>
+  <mat-sidenav-container class="h-[calc(100vh-4rem)]">
     
 
     <!-- Sidebar -->
     <mat-sidenav #sidebar  fixedInViewport [mode]="mobileScreen?'over':'side'" [opened]="mobileScreen?false:true">
         <mat-list>
-            <mat-list-item *ngFor="let item of navItems" [ngStyle]="currentSelection == item.selection ? {'background-color': 'seashell'} : {'background-color' : 'white'} " class="hover:bg-stone-100" [routerLink]="item.link" (click)="setCurrentSelection(item.selection)">
+            <mat-list-item *ngFor="let item of navItems" [ngStyle]="currentSelection == item.selection ? {'background-color': 'lightgray'} : {'background-color' : 'white'}" [routerLink]="item.link" (click)="setCurrentSelection(item.selection)">
               <div class="flex justify-between">
                 <div>
                   <img [src]="item.icon" width="25" alt="">
